@@ -26,26 +26,26 @@ const alertStateSortScore = {
 };
 
 const evalFunctions = [
-  { text: 'IS ABOVE', value: 'gt' },
-  { text: 'IS BELOW', value: 'lt' },
-  { text: 'IS OUTSIDE RANGE', value: 'outside_range' },
-  { text: 'IS WITHIN RANGE', value: 'within_range' },
-  { text: 'HAS NO VALUE', value: 'no_value' },
+  { text: '大于', value: 'gt' },
+  { text: '小于', value: 'lt' },
+  { text: '超出范围', value: 'outside_range' },
+  { text: '范围之内', value: 'within_range' },
+  { text: '没有值', value: 'no_value' },
 ];
 
 const evalOperators = [{ text: 'OR', value: 'or' }, { text: 'AND', value: 'and' }];
 
 const reducerTypes = [
-  { text: 'avg()', value: 'avg' },
-  { text: 'min()', value: 'min' },
-  { text: 'max()', value: 'max' },
-  { text: 'sum()', value: 'sum' },
-  { text: 'count()', value: 'count' },
-  { text: 'last()', value: 'last' },
-  { text: 'median()', value: 'median' },
-  { text: 'diff()', value: 'diff' },
-  { text: 'percent_diff()', value: 'percent_diff' },
-  { text: 'count_non_null()', value: 'count_non_null' },
+  { text: '平均值', value: 'avg' },
+  { text: '最小值', value: 'min' },
+  { text: '最大值', value: 'max' },
+  { text: '求和', value: 'sum' },
+  { text: '计数', value: 'count' },
+  { text: '最后一次', value: 'last' },
+  { text: '中位数()', value: 'median' },
+  { text: '不同值()', value: 'diff' },
+  { text: '百分比值()', value: 'percent_diff' },
+  { text: '非0计数()', value: 'count_non_null' },
 ];
 
 const noDataModes = [

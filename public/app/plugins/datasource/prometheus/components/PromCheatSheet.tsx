@@ -3,20 +3,19 @@ import { ExploreStartPageProps, DataQuery } from '@grafana/ui';
 
 const CHEAT_SHEET_ITEMS = [
   {
-    title: 'Request Rate',
+    title: '请求效率',
     expression: 'rate(http_request_total[5m])',
-    label:
-      'Given an HTTP request counter, this query calculates the per-second average request rate over the last 5 minutes.',
+    label: '给定一个HTTP请求计数器，此查询将计算最近5分钟的每秒平均请求速率.',
   },
   {
-    title: '95th Percentile of Request Latencies',
+    title: '95%请求延迟',
     expression: 'histogram_quantile(0.95, sum(rate(prometheus_http_request_duration_seconds_bucket[5m])) by (le))',
-    label: 'Calculates the 95th percentile of HTTP request rate over 5 minute windows.',
+    label: '计算超过5分钟的请求延迟所占比例.',
   },
   {
-    title: 'Alerts Firing',
+    title: '警报触发',
     expression: 'sort_desc(sum(sum_over_time(ALERTS{alertstate="firing"}[24h])) by (alertname))',
-    label: 'Sums up the alerts that have been firing over the last 24 hours.',
+    label: '总计过去24小时内一直触发的警报.',
   },
 ];
 
