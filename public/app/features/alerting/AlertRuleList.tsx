@@ -26,13 +26,13 @@ export interface Props {
 
 export class AlertRuleList extends PureComponent<Props, any> {
   stateFilters = [
-    { text: 'All', value: 'all' },
-    { text: 'OK', value: 'ok' },
-    { text: 'Not OK', value: 'not_ok' },
-    { text: 'Alerting', value: 'alerting' },
-    { text: 'No Data', value: 'no_data' },
-    { text: 'Paused', value: 'paused' },
-    { text: 'Pending', value: 'pending' },
+    { text: '全部', value: 'all' },
+    { text: '正常', value: 'ok' },
+    { text: '不正常', value: 'not_ok' },
+    { text: '告警', value: 'alerting' },
+    { text: '无数据', value: 'no_data' },
+    { text: '暂停', value: 'paused' },
+    { text: '挂起', value: 'pending' },
   ];
 
   componentDidMount() {
@@ -98,7 +98,7 @@ export class AlertRuleList extends PureComponent<Props, any> {
               <FilterInput
                 labelClassName="gf-form--has-input-icon gf-form--grow"
                 inputClassName="gf-form-input"
-                placeholder="Search alerts"
+                placeholder="检索告警"
                 value={search}
                 onChange={this.onSearchQueryChange}
               />

@@ -112,8 +112,7 @@ export class PromQueryEditor extends PureComponent<Props, State> {
           <div className="gf-form">
             <FormLabel
               width={7}
-              tooltip="Controls the name of the time series, using name or pattern. For example
-        {{hostname}} will be replaced with label value for the label hostname."
+              tooltip="使用名称或模式控制时间序列的名称。例如将用label主机名的label值替换{{hostname}}."
             >
               图例
             </FormLabel>
@@ -130,9 +129,7 @@ export class PromQueryEditor extends PureComponent<Props, State> {
           <div className="gf-form">
             <FormLabel
               width={7}
-              tooltip="Leave blank for auto handling based on time range and panel width.
-            Note that the actual dates used in the query will be adjusted
-        to a multiple of the interval step."
+              tooltip="根据时间范围和面板宽度为自动处理留下空白。注意，查询中使用的实际日期将进行调整等于间隔步长的倍数."
             >
               最小步骤
             </FormLabel>

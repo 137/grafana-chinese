@@ -136,7 +136,7 @@ describe('LokiDatasource', () => {
             return Promise.reject({
               statusText: 'Not found',
               status: 404,
-              data: '404 page not found',
+              data: '404 页面丢失了',
             });
           },
         } as unknown) as BackendSrv;

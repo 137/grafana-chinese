@@ -10,9 +10,7 @@
  * For async scripts, return a function, this function must take a single callback function as argument,
  * call this callback function with the dashboard object (look at scripted_async.js for an example)
  */
-
 'use strict';
-
 // accessible variables in this scope
 var window, document, ARGS, $, jQuery, moment, kbn;
 

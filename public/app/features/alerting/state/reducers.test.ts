@@ -10,7 +10,7 @@ describe('Alert rules', () => {
       dashboardUid: 'ggHbN42mk',
       dashboardSlug: 'alerting-with-testdata',
       panelId: 4,
-      name: 'TestData - Always Alerting',
+      name: '测试数据 - 始终保持告警状态',
       state: 'alerting',
       newStateDate: '2018-09-04T10:00:30+02:00',
       evalDate: '0001-01-01T00:00:00Z',

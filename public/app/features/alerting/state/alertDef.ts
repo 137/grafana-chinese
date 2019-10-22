@@ -49,13 +49,13 @@ const reducerTypes = [
 ];
 
 const noDataModes = [
-  { text: 'Alerting', value: 'alerting' },
-  { text: 'No Data', value: 'no_data' },
-  { text: 'Keep Last State', value: 'keep_state' },
-  { text: 'Ok', value: 'ok' },
+  { text: '告警', value: 'alerting' },
+  { text: '无数据', value: 'no_data' },
+  { text: '保持最后一次的状态', value: 'keep_state' },
+  { text: '正常', value: 'ok' },
 ];
 
-const executionErrorModes = [{ text: 'Alerting', value: 'alerting' }, { text: 'Keep Last State', value: 'keep_state' }];
+const executionErrorModes = [{ text: '告警', value: 'alerting' }, { text: 'Keep Last State', value: 'keep_state' }];
 
 function createReducerPart(model: any) {
   const def = new QueryPartDef({ type: model.type, defaultParams: [] });
