@@ -148,7 +148,7 @@ export class DashboardSrv {
 
     // important that these happen before location redirect below
     this.$rootScope.appEvent('dashboard-saved', this.dashboard);
-    this.$rootScope.appEvent('alert-success', ['Dashboard saved']);
+    this.$rootScope.appEvent('alert-success', ['仪表板保存成功']);
 
     const newUrl = locationUtil.stripBaseFromUrl(data.url);
     const currentPath = this.$location.path();
