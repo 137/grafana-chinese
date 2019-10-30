@@ -16,8 +16,8 @@
   "editable": true,
   "gnetId": 6756,
   "graphTooltip": 0,
-  "id": 6,
-  "iteration": 1571813579445,
+  "id": 7,
+  "iteration": 1572421586826,
   "links": [],
   "panels": [
     {
@@ -827,7 +827,7 @@
       "fillGradient": 0,
       "gridPos": {
         "h": 9,
-        "w": 8,
+        "w": 11,
         "x": 0,
         "y": 16
       },
@@ -853,36 +853,29 @@
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
-      "repeat": "memory_pool_heap",
-      "repeatDirection": "h",
-      "scopedVars": {
-        "memory_pool_heap": {
-          "selected": false,
-          "text": "Eden Space",
-          "value": "Eden Space"
-        }
-      },
+      "repeat": null,
+      "repeatDirection": "v",
       "seriesOverrides": [],
       "spaceLength": 10,
       "stack": false,
       "steppedLine": false,
       "targets": [
         {
-          "expr": "jvm_memory_used_bytes{instance=\"$instance\", application=\"$application\", id=\"$memory_pool_heap\"}",
+          "expr": "jvm_memory_used_bytes{instance=\"$instance\", application=\"$application\", id=\"Eden Space\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "已使用内存大小",
           "refId": "C"
         },
         {
-          "expr": "jvm_memory_committed_bytes{instance=\"$instance\", application=\"$application\", id=\"$memory_pool_heap\"}",
+          "expr": "jvm_memory_committed_bytes{instance=\"$instance\", application=\"$application\", id=\"Eden Space\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "当前可使用的内存大小",
           "refId": "A"
         },
         {
-          "expr": "jvm_memory_max_bytes{instance=\"$instance\", application=\"$application\", id=\"$memory_pool_heap\"}",
+          "expr": "jvm_memory_max_bytes{instance=\"$instance\", application=\"$application\", id=\"Eden Space\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "最大内存",
@@ -893,7 +886,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "伊甸园区$memory_pool_heap (heap)",
+      "title": "伊甸园区Edgen (heap)",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -941,11 +934,11 @@
       "fillGradient": 0,
       "gridPos": {
         "h": 9,
-        "w": 8,
-        "x": 8,
+        "w": 13,
+        "x": 11,
         "y": 16
       },
-      "id": 102,
+      "id": 104,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -968,37 +961,28 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1571813579445,
-      "repeatPanelId": 85,
-      "scopedVars": {
-        "memory_pool_heap": {
-          "selected": false,
-          "text": "Survivor Space",
-          "value": "Survivor Space"
-        }
-      },
+      "repeatDirection": "v",
       "seriesOverrides": [],
       "spaceLength": 10,
       "stack": false,
       "steppedLine": false,
       "targets": [
         {
-          "expr": "jvm_memory_used_bytes{instance=\"$instance\", application=\"$application\", id=\"$memory_pool_heap\"}",
+          "expr": "jvm_memory_used_bytes{instance=\"$instance\", application=\"$application\", id=\"Survivor Space\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "已使用内存大小",
           "refId": "C"
         },
         {
-          "expr": "jvm_memory_committed_bytes{instance=\"$instance\", application=\"$application\", id=\"$memory_pool_heap\"}",
+          "expr": "jvm_memory_committed_bytes{instance=\"$instance\", application=\"$application\", id=\"Survivor Space\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "当前可使用的内存大小",
           "refId": "A"
         },
         {
-          "expr": "jvm_memory_max_bytes{instance=\"$instance\", application=\"$application\", id=\"$memory_pool_heap\"}",
+          "expr": "jvm_memory_max_bytes{instance=\"$instance\", application=\"$application\", id=\"Survivor Space\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "最大内存",
@@ -1009,7 +993,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "伊甸园区$memory_pool_heap (heap)",
+      "title": "伊甸园区Survivor  (heap)",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1057,11 +1041,11 @@
       "fillGradient": 0,
       "gridPos": {
         "h": 9,
-        "w": 8,
-        "x": 16,
-        "y": 16
+        "w": 11,
+        "x": 0,
+        "y": 25
       },
-      "id": 103,
+      "id": 106,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -1084,37 +1068,28 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1571813579445,
-      "repeatPanelId": 85,
-      "scopedVars": {
-        "memory_pool_heap": {
-          "selected": false,
-          "text": "Tenured Gen",
-          "value": "Tenured Gen"
-        }
-      },
+      "repeatDirection": "v",
       "seriesOverrides": [],
       "spaceLength": 10,
       "stack": false,
       "steppedLine": false,
       "targets": [
         {
-          "expr": "jvm_memory_used_bytes{instance=\"$instance\", application=\"$application\", id=\"$memory_pool_heap\"}",
+          "expr": "jvm_memory_used_bytes{instance=\"$instance\", application=\"$application\", id=\"Tenured Gen\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "已使用内存大小",
           "refId": "C"
         },
         {
-          "expr": "jvm_memory_committed_bytes{instance=\"$instance\", application=\"$application\", id=\"$memory_pool_heap\"}",
+          "expr": "jvm_memory_committed_bytes{instance=\"$instance\", application=\"$application\", id=\"Tenured Gen\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "当前可使用的内存大小",
           "refId": "A"
         },
         {
-          "expr": "jvm_memory_max_bytes{instance=\"$instance\", application=\"$application\", id=\"$memory_pool_heap\"}",
+          "expr": "jvm_memory_max_bytes{instance=\"$instance\", application=\"$application\", id=\"Tenured Gen\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "最大内存",
@@ -1125,7 +1100,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "伊甸园区$memory_pool_heap (heap)",
+      "title": "老年代区  (heap)",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1172,410 +1147,9 @@
       "fillGradient": 0,
       "gridPos": {
         "h": 9,
-        "w": 12,
-        "x": 0,
+        "w": 13,
+        "x": 11,
         "y": 25
-      },
-      "id": 88,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "max": true,
-        "min": true,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "repeat": "memory_pool_nonheap",
-      "repeatDirection": "h",
-      "scopedVars": {
-        "memory_pool_nonheap": {
-          "selected": false,
-          "text": "Code Cache",
-          "value": "Code Cache"
-        }
-      },
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "jvm_memory_used_bytes{instance=\"$instance\", application=\"$application\", id=\"$memory_pool_nonheap\"}",
-          "format": "time_series",
-          "intervalFactor": 1,
-          "legendFormat": "已使用缓存大小",
-          "refId": "C"
-        },
-        {
-          "expr": "jvm_memory_committed_bytes{instance=\"$instance\", application=\"$application\", id=\"$memory_pool_nonheap\"}",
-          "format": "time_series",
-          "intervalFactor": 1,
-          "legendFormat": "当前可使用缓存大小",
-          "refId": "A"
-        },
-        {
-          "expr": "jvm_memory_max_bytes{instance=\"$instance\", application=\"$application\", id=\"$memory_pool_nonheap\"}",
-          "format": "time_series",
-          "intervalFactor": 1,
-          "legendFormat": "最大缓存",
-          "refId": "B"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "代码缓存区$memory_pool_nonheap (non-heap)",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "bytes",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "zch电脑的Prometheus",
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 7,
-        "w": 12,
-        "x": 12,
-        "y": 25
-      },
-      "id": 83,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "jvm_buffer_memory_used_bytes{instance=\"$instance\", application=\"$application\", id=\"mapped\"}",
-          "format": "time_series",
-          "intervalFactor": 1,
-          "legendFormat": "已使用字节",
-          "refId": "A"
-        },
-        {
-          "expr": "jvm_buffer_total_capacity_bytes{instance=\"$instance\", application=\"$application\", id=\"mapped\"}",
-          "format": "time_series",
-          "intervalFactor": 1,
-          "legendFormat": "容量字节",
-          "refId": "B"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "映射缓冲器",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "zch电脑的Prometheus",
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 9,
-        "w": 12,
-        "x": 12,
-        "y": 32
-      },
-      "id": 78,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "irate(jvm_gc_memory_allocated_bytes_total{instance=\"$instance\", application=\"$application\"}[5m])",
-          "format": "time_series",
-          "intervalFactor": 1,
-          "legendFormat": "GC时，年轻代分配的内存空间",
-          "refId": "A"
-        },
-        {
-          "expr": "irate(jvm_gc_memory_promoted_bytes_total{instance=\"$instance\", application=\"$application\"}[5m])",
-          "format": "time_series",
-          "intervalFactor": 1,
-          "legendFormat": "GC时，老年代分配的内存空间",
-          "refId": "B"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "内存分配/推动",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "bytes",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "zch电脑的Prometheus",
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 7,
-        "w": 12,
-        "x": 0,
-        "y": 34
-      },
-      "id": 82,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "jvm_buffer_memory_used_bytes{instance=\"$instance\", application=\"$application\", id=\"direct\"}",
-          "format": "time_series",
-          "intervalFactor": 1,
-          "legendFormat": "已使用字节",
-          "refId": "A"
-        },
-        {
-          "expr": "jvm_buffer_total_capacity_bytes{instance=\"$instance\", application=\"$application\", id=\"direct\"}",
-          "format": "time_series",
-          "intervalFactor": 1,
-          "legendFormat": "容量字节",
-          "refId": "B"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "直接缓冲器",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "zch电脑的Prometheus",
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 9,
-        "w": 12,
-        "x": 0,
-        "y": 41
       },
       "id": 68,
       "legend": {
@@ -1677,11 +1251,11 @@
       "fillGradient": 0,
       "gridPos": {
         "h": 9,
-        "w": 12,
-        "x": 12,
-        "y": 41
+        "w": 11,
+        "x": 0,
+        "y": 34
       },
-      "id": 104,
+      "id": 88,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -1703,38 +1277,29 @@
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
-      "repeat": null,
+      "repeat": "memory_pool_nonheap",
       "repeatDirection": "h",
-      "repeatIteration": 1571813579445,
-      "repeatPanelId": 88,
-      "scopedVars": {
-        "memory_pool_nonheap": {
-          "selected": false,
-          "text": "Metaspace",
-          "value": "Metaspace"
-        }
-      },
       "seriesOverrides": [],
       "spaceLength": 10,
       "stack": false,
       "steppedLine": false,
       "targets": [
         {
-          "expr": "jvm_memory_used_bytes{instance=\"$instance\", application=\"$application\", id=\"$memory_pool_nonheap\"}",
+          "expr": "jvm_memory_used_bytes{instance=\"$instance\", application=\"$application\", id=\"Code Cache\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "已使用缓存大小",
           "refId": "C"
         },
         {
-          "expr": "jvm_memory_committed_bytes{instance=\"$instance\", application=\"$application\", id=\"$memory_pool_nonheap\"}",
+          "expr": "jvm_memory_committed_bytes{instance=\"$instance\", application=\"$application\", id=\"Code Cache\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "当前可使用缓存大小",
           "refId": "A"
         },
         {
-          "expr": "jvm_memory_max_bytes{instance=\"$instance\", application=\"$application\", id=\"$memory_pool_nonheap\"}",
+          "expr": "jvm_memory_max_bytes{instance=\"$instance\", application=\"$application\", id=\"Code Cache\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "最大缓存",
@@ -1745,7 +1310,401 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "代码缓存区$memory_pool_nonheap (non-heap)",
+      "title": "代码缓存区Code Cache (non-heap)",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "bytes",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "zch电脑的Prometheus",
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 13,
+        "x": 11,
+        "y": 34
+      },
+      "id": 108,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": true,
+        "min": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": "memory_pool_nonheap",
+      "repeatDirection": "h",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "jvm_memory_used_bytes{instance=\"$instance\", application=\"$application\", id=\"Metaspace\"}",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "已使用缓存大小",
+          "refId": "C"
+        },
+        {
+          "expr": "jvm_memory_committed_bytes{instance=\"$instance\", application=\"$application\", id=\"Metaspace\"}",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "当前可使用缓存大小",
+          "refId": "A"
+        },
+        {
+          "expr": "jvm_memory_max_bytes{instance=\"$instance\", application=\"$application\", id=\"Metaspace\"}",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "最大缓存",
+          "refId": "B"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "代码缓存区Metaspace (non-heap)",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "bytes",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "zch电脑的Prometheus",
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 0,
+        "y": 43
+      },
+      "id": 83,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "jvm_buffer_memory_used_bytes{instance=\"$instance\", application=\"$application\", id=\"mapped\"}",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "已使用字节",
+          "refId": "A"
+        },
+        {
+          "expr": "jvm_buffer_total_capacity_bytes{instance=\"$instance\", application=\"$application\", id=\"mapped\"}",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "容量字节",
+          "refId": "B"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "映射缓冲器",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "zch电脑的Prometheus",
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 8,
+        "y": 43
+      },
+      "id": 82,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "jvm_buffer_memory_used_bytes{instance=\"$instance\", application=\"$application\", id=\"direct\"}",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "已使用字节",
+          "refId": "A"
+        },
+        {
+          "expr": "jvm_buffer_total_capacity_bytes{instance=\"$instance\", application=\"$application\", id=\"direct\"}",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "容量字节",
+          "refId": "B"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "直接缓冲器",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "zch电脑的Prometheus",
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 16,
+        "y": 43
+      },
+      "id": 78,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "irate(jvm_gc_memory_allocated_bytes_total{instance=\"$instance\", application=\"$application\"}[5m])",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "GC时，年轻代分配的内存空间",
+          "refId": "A"
+        },
+        {
+          "expr": "irate(jvm_gc_memory_promoted_bytes_total{instance=\"$instance\", application=\"$application\"}[5m])",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "GC时，老年代分配的内存空间",
+          "refId": "B"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "内存分配/推动",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1788,7 +1747,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 50
+        "y": 51
       },
       "id": 72,
       "panels": [],
@@ -1804,10 +1763,10 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 10,
+        "h": 8,
         "w": 12,
         "x": 0,
-        "y": 51
+        "y": 52
       },
       "id": 74,
       "legend": {
@@ -1897,10 +1856,10 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 10,
+        "h": 8,
         "w": 12,
         "x": 12,
-        "y": 51
+        "y": 52
       },
       "id": 76,
       "legend": {
@@ -1943,7 +1902,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "GC Stop the World Duration",
+      "title": "GC挂起其它所有线程",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1986,7 +1945,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 61
+        "y": 60
       },
       "id": 34,
       "panels": [],
@@ -2011,7 +1970,7 @@
         "h": 4,
         "w": 4,
         "x": 0,
-        "y": 62
+        "y": 61
       },
       "id": 44,
       "interval": null,
@@ -2083,7 +2042,7 @@
         "h": 8,
         "w": 20,
         "x": 4,
-        "y": 62
+        "y": 61
       },
       "id": 36,
       "legend": {
@@ -2195,7 +2154,7 @@
         "h": 4,
         "w": 4,
         "x": 0,
-        "y": 66
+        "y": 65
       },
       "id": 46,
       "interval": null,
@@ -2267,7 +2226,7 @@
         "h": 6,
         "w": 8,
         "x": 0,
-        "y": 70
+        "y": 69
       },
       "id": 38,
       "legend": {
@@ -2356,7 +2315,7 @@
         "h": 6,
         "w": 8,
         "x": 8,
-        "y": 70
+        "y": 69
       },
       "id": 42,
       "legend": {
@@ -2445,7 +2404,7 @@
         "h": 6,
         "w": 8,
         "x": 16,
-        "y": 70
+        "y": 69
       },
       "id": 40,
       "legend": {
@@ -2528,7 +2487,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 76
+        "y": 75
       },
       "id": 18,
       "panels": [],
@@ -2545,9 +2504,9 @@
       "fillGradient": 0,
       "gridPos": {
         "h": 7,
-        "w": 24,
+        "w": 12,
         "x": 0,
-        "y": 77
+        "y": 76
       },
       "id": 4,
       "legend": {
@@ -2637,9 +2596,9 @@
       "fillGradient": 0,
       "gridPos": {
         "h": 7,
-        "w": 24,
-        "x": 0,
-        "y": 84
+        "w": 12,
+        "x": 12,
+        "y": 76
       },
       "id": 2,
       "legend": {
@@ -2724,7 +2683,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 91
+        "y": 83
       },
       "id": 22,
       "panels": [],
@@ -2749,7 +2708,7 @@
         "h": 4,
         "w": 4,
         "x": 0,
-        "y": 92
+        "y": 84
       },
       "id": 28,
       "interval": null,
@@ -2820,9 +2779,9 @@
       "fillGradient": 0,
       "gridPos": {
         "h": 7,
-        "w": 9,
+        "w": 8,
         "x": 4,
-        "y": 92
+        "y": 84
       },
       "id": 24,
       "legend": {
@@ -2912,9 +2871,9 @@
       "fillGradient": 0,
       "gridPos": {
         "h": 7,
-        "w": 11,
-        "x": 13,
-        "y": 92
+        "w": 12,
+        "x": 12,
+        "y": 84
       },
       "id": 26,
       "legend": {
@@ -3017,7 +2976,7 @@
         "h": 3,
         "w": 4,
         "x": 0,
-        "y": 96
+        "y": 88
       },
       "id": 32,
       "interval": null,
@@ -3086,10 +3045,10 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 7,
-        "w": 13,
+        "h": 8,
+        "w": 12,
         "x": 0,
-        "y": 99
+        "y": 91
       },
       "id": 30,
       "legend": {
@@ -3129,7 +3088,7 @@
           "expr": "tomcat_threads_busy_threads{instance=\"$instance\", application=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 1,
-          "legendFormat": "omcat繁忙线程",
+          "legendFormat": "tomcat繁忙线程",
           "refId": "B"
         }
       ],
@@ -3180,7 +3139,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 106
+        "y": 99
       },
       "id": 8,
       "panels": [],
@@ -3199,7 +3158,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 107
+        "y": 100
       },
       "id": 6,
       "legend": {
@@ -3291,7 +3250,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 107
+        "y": 100
       },
       "id": 10,
       "legend": {
@@ -3383,7 +3342,7 @@
         "h": 7,
         "w": 8,
         "x": 0,
-        "y": 114
+        "y": 107
       },
       "id": 14,
       "legend": {
@@ -3475,7 +3434,7 @@
         "h": 7,
         "w": 8,
         "x": 8,
-        "y": 114
+        "y": 107
       },
       "id": 16,
       "legend": {
@@ -3567,7 +3526,7 @@
         "h": 7,
         "w": 8,
         "x": 16,
-        "y": 114
+        "y": 107
       },
       "id": 20,
       "legend": {
@@ -3648,7 +3607,7 @@
       }
     }
   ],
-  "refresh": false,
+  "refresh": "5s",
   "schemaVersion": 20,
   "style": "dark",
   "tags": [],
@@ -3657,83 +3616,81 @@
       {
         "allValue": null,
         "current": {
-          "tags": [],
-          "text": "localhost:9301",
-          "value": "localhost:9301"
+          "text": "localhost:8888",
+          "value": "localhost:8888"
         },
         "hide": 0,
         "includeAll": false,
-        "label": "Instance",
+        "label": "服务地址",
         "multi": false,
         "name": "instance",
         "options": [
           {
             "selected": false,
-            "text": "localhost:7101",
-            "value": "localhost:7101"
+            "text": "115.233.200.155:9010",
+            "value": "115.233.200.155:9010"
           },
           {
             "selected": false,
-            "text": "localhost:8888",
-            "value": "localhost:8888"
+            "text": "115.233.200.155:7101",
+            "value": "115.233.200.155:7101"
           },
           {
             "selected": false,
-            "text": "localhost:7201",
-            "value": "localhost:7201"
+            "text": "115.233.200.155:7201",
+            "value": "115.233.200.155:7201"
           },
           {
             "selected": false,
-            "text": "localhost:7301",
-            "value": "localhost:7301"
+            "text": "115.233.200.155:7401",
+            "value": "115.233.200.155:7401"
           },
           {
             "selected": false,
-            "text": "localhost:7401",
-            "value": "localhost:7401"
+            "text": "115.233.200.155:7601",
+            "value": "115.233.200.155:7601"
           },
           {
             "selected": false,
-            "text": "localhost:9101",
-            "value": "localhost:9101"
+            "text": "115.233.200.155:9101",
+            "value": "115.233.200.155:9101"
           },
           {
             "selected": false,
-            "text": "localhost:9201",
-            "value": "localhost:9201"
+            "text": "115.233.200.155:9201",
+            "value": "115.233.200.155:9201"
           },
           {
-            "selected": true,
-            "text": "localhost:9301",
-            "value": "localhost:9301"
+            "selected": false,
+            "text": "115.233.200.155:9301",
+            "value": "115.233.200.155:9301"
           }
         ],
-        "query": "localhost:7101,localhost:8888,localhost:7201,localhost:7301,localhost:7401,localhost:9101,localhost:9201,localhost:9301",
+        "query": "115.233.200.155:9010,115.233.200.155:7101,115.233.200.155:7201,115.233.200.155:7401,115.233.200.155:7601,115.233.200.155:9101,115.233.200.155:9201,115.233.200.155:9301",
         "skipUrlSync": false,
         "type": "custom"
       },
       {
         "allValue": null,
         "current": {
-          "tags": [],
-          "text": "consumer-outside-v1",
-          "value": "consumer-outside-v1"
+          "text": "iptv-prometheus",
+          "value": "iptv-prometheus"
         },
         "hide": 0,
         "includeAll": false,
-        "label": "Application",
+        "label": "应用在微服务中得名称",
         "multi": false,
         "name": "application",
         "options": [
           {
             "selected": false,
-            "text": "provider-user",
-            "value": "provider-user"
+            "text": "gateway-zuul",
+            "value": "gateway-zuul"
           },
           {
             "selected": false,
-            "text": "iptv-prometheus",
-            "value": "iptv-prometheus"
+            "text": "provider-user",
+            "value": "provider-user"
           },
           {
             "selected": false,
@@ -3742,13 +3699,13 @@
           },
           {
             "selected": false,
-            "text": "provider-mall",
-            "value": "provider-mall"
+            "text": "provider-products",
+            "value": "provider-products"
           },
           {
             "selected": false,
-            "text": "provider-products",
-            "value": "provider-products"
+            "text": "kafka-consumer-points",
+            "value": "kafka-consumer-points"
           },
           {
             "selected": false,
@@ -3761,12 +3718,12 @@
             "value": "consumer-sys-v1"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "consumer-outside-v1",
             "value": "consumer-outside-v1"
           }
         ],
-        "query": "provider-user,iptv-prometheus,provider-points,provider-mall,provider-products,consumer-epg-v1,consumer-sys-v1,consumer-outside-v1",
+        "query": "gateway-zuul,provider-user,provider-points,provider-products,kafka-consumer-points,consumer-epg-v1,consumer-sys-v1,consumer-outside-v1",
         "skipUrlSync": false,
         "type": "custom"
       },
@@ -3774,6 +3731,7 @@
         "allValue": null,
         "current": {
           "isNone": true,
+          "selected": true,
           "text": "None",
           "value": ""
         },
@@ -3781,61 +3739,11 @@
         "definition": "",
         "hide": 0,
         "includeAll": false,
-        "label": "HikariCP-Pool",
+        "label": "连接池",
         "multi": false,
         "name": "hikaricp",
         "options": [],
         "query": "label_values(hikaricp_connections{instance=\"$instance\", application=\"$application\"}, pool)",
-        "refresh": 1,
-        "regex": "",
-        "skipUrlSync": false,
-        "sort": 1,
-        "tagValuesQuery": "",
-        "tags": [],
-        "tagsQuery": "",
-        "type": "query",
-        "useTags": false
-      },
-      {
-        "allValue": null,
-        "current": {
-          "text": "All",
-          "value": "$__all"
-        },
-        "datasource": "zch电脑的Prometheus",
-        "definition": "",
-        "hide": 0,
-        "includeAll": true,
-        "label": "Memory Pool (heap)",
-        "multi": false,
-        "name": "memory_pool_heap",
-        "options": [],
-        "query": "label_values(jvm_memory_used_bytes{application=\"$application\", instance=\"$instance\", area=\"heap\"},id)",
-        "refresh": 1,
-        "regex": "",
-        "skipUrlSync": false,
-        "sort": 1,
-        "tagValuesQuery": "",
-        "tags": [],
-        "tagsQuery": "",
-        "type": "query",
-        "useTags": false
-      },
-      {
-        "allValue": null,
-        "current": {
-          "text": "All",
-          "value": "$__all"
-        },
-        "datasource": "zch电脑的Prometheus",
-        "definition": "",
-        "hide": 0,
-        "includeAll": true,
-        "label": "Memory Pool (nonheap)",
-        "multi": false,
-        "name": "memory_pool_nonheap",
-        "options": [],
-        "query": "label_values(jvm_memory_used_bytes{application=\"$application\", instance=\"$instance\", area=\"nonheap\"},id)",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -3859,5 +3767,5 @@
   "timezone": "",
   "title": "iptv监控运营平台",
   "uid": "qaZcxwTZk",
-  "version": 25
+  "version": 4
 }

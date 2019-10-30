@@ -52,17 +52,17 @@
 <script type="text/ng-template" id="shareLinkOptions.html">
   <div class="gf-form-group">
   	<gf-form-switch class="gf-form"
-  		label="Current time range" label-class="width-12" switch-class="max-width-6"
+  		label="当前时间范围" label-class="width-12" switch-class="max-width-6"
   		checked="options.forCurrent" on-change="buildUrl()">
   	</gf-form-switch>
   	<gf-form-switch class="gf-form"
-  		label="Template variables" label-class="width-12" switch-class="max-width-6"
+  		label="模板变量" label-class="width-12" switch-class="max-width-6"
   		checked="options.includeTemplateVars" on-change="buildUrl()">
   	</gf-form-switch>
   	<div class="gf-form">
   		<span class="gf-form-label width-12">主题</span>
   		<div class="gf-form-select-wrapper width-10">
-  			<select class="gf-form-input" ng-model="options.theme" ng-options="f as f for f in ['current', 'dark', 'light']" ng-change="buildUrl()"></select>
+  			<select class="gf-form-input" ng-model="options.theme" ng-options="f as f for f in ['当前', '黑色', '白亮']" ng-change="buildUrl()"></select>
   		</div>
   	</div>
   </div>

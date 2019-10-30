@@ -19,11 +19,11 @@ const template = `
     <div class="p-t-1">
       <div class="gf-form-group" ng-if="ctrl.timeChange || ctrl.variableValueChange">
 		    <gf-form-switch class="gf-form"
-			    label="Save current time range" ng-if="ctrl.timeChange" label-class="width-12" switch-class="max-width-6"
+			    label="保存当前时间范围" ng-if="ctrl.timeChange" label-class="width-12" switch-class="max-width-6"
 			    checked="ctrl.saveTimerange" on-change="buildUrl()">
 		    </gf-form-switch>
 		    <gf-form-switch class="gf-form"
-			    label="Save current variables" ng-if="ctrl.variableValueChange" label-class="width-12" switch-class="max-width-6"
+			    label="保存当前变量" ng-if="ctrl.variableValueChange" label-class="width-12" switch-class="max-width-6"
 			    checked="ctrl.saveVariables" on-change="buildUrl()">
 		    </gf-form-switch>
 	    </div>
@@ -58,7 +58,7 @@ const template = `
         ng-class="{'btn-primary--processing': ctrl.isSaving}"
         ng-disabled="ctrl.saveForm.$invalid || ctrl.isSaving"
       >
-        <span ng-if="!ctrl.isSaving">Save</span>
+        <span ng-if="!ctrl.isSaving">保存</span>
         <span ng-if="ctrl.isSaving === true">保存...</span>
       </button>
       <button class="btn btn-inverse" ng-click="ctrl.dismiss();">取消</button>
