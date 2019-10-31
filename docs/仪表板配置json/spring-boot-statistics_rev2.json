@@ -16,8 +16,8 @@
   "editable": true,
   "gnetId": 6756,
   "graphTooltip": 0,
-  "id": 7,
-  "iteration": 1572421586826,
+  "id": 1,
+  "iteration": 1572508638301,
   "links": [],
   "panels": [
     {
@@ -113,7 +113,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "up{instance=\"$instance\"}",
+          "expr": " up{instance=\"$instance\",job=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "",
@@ -196,7 +196,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "sum(jvm_memory_used_bytes{application=\"$application\", instance=\"$instance\", area=\"heap\"})*100/sum(jvm_memory_max_bytes{application=\"$application\",instance=\"$instance\", area=\"heap\"})",
+          "expr": "sum(jvm_memory_used_bytes{application=\"$application\", instance=\"$instance\",job=\"$application\", area=\"heap\"})*100/sum(jvm_memory_max_bytes{application=\"$application\",instance=\"$instance\",job=\"$application\", area=\"heap\"})",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "",
@@ -283,7 +283,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "sum(jvm_memory_used_bytes{application=\"$application\", instance=\"$instance\", area=\"nonheap\"})*100/sum(jvm_memory_max_bytes{application=\"$application\",instance=\"$instance\", area=\"nonheap\"})",
+          "expr": "sum(jvm_memory_used_bytes{application=\"$application\", instance=\"$instance\",job=\"$application\", area=\"nonheap\"})*100/sum(jvm_memory_max_bytes{application=\"$application\",instance=\"$instance\",job=\"$application\", area=\"nonheap\"})",
           "format": "time_series",
           "intervalFactor": 2,
           "legendFormat": "",
@@ -351,14 +351,14 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "system_load_average_1m{instance=\"$instance\", application=\"$application\"}",
+          "expr": "system_load_average_1m{instance=\"$instance\", application=\"$application\",job=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "Load Average [1m]",
           "refId": "A"
         },
         {
-          "expr": "system_cpu_count{instance=\"$instance\", application=\"$application\"}",
+          "expr": "system_cpu_count{instance=\"$instance\", application=\"$application\",job=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "CPU 核心size",
@@ -468,7 +468,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "process_uptime_seconds{application=\"$application\", instance=\"$instance\"}",
+          "expr": "process_uptime_seconds{application=\"$application\", instance=\"$instance\",job=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 2,
           "legendFormat": "",
@@ -552,7 +552,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "process_start_time_seconds{application=\"$application\", instance=\"$instance\"}*1000",
+          "expr": "process_start_time_seconds{application=\"$application\", instance=\"$instance\",job=\"$application\"}*1000",
           "format": "time_series",
           "intervalFactor": 2,
           "legendFormat": "",
@@ -616,14 +616,14 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "system_cpu_usage{instance=\"$instance\", application=\"$application\"}",
+          "expr": "system_cpu_usage{instance=\"$instance\", application=\"$application\",job=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "系统cpu使用率",
           "refId": "A"
         },
         {
-          "expr": "process_cpu_usage{instance=\"$instance\", application=\"$application\"}",
+          "expr": "process_cpu_usage{instance=\"$instance\", application=\"$application\",job=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "进程cpu使用率",
@@ -861,21 +861,21 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "jvm_memory_used_bytes{instance=\"$instance\", application=\"$application\", id=\"Eden Space\"}",
+          "expr": "jvm_memory_used_bytes{instance=\"$instance\", application=\"$application\", id=\"Eden Space\",job=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "已使用内存大小",
           "refId": "C"
         },
         {
-          "expr": "jvm_memory_committed_bytes{instance=\"$instance\", application=\"$application\", id=\"Eden Space\"}",
+          "expr": "jvm_memory_committed_bytes{instance=\"$instance\", application=\"$application\", id=\"Eden Space\",job=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "当前可使用的内存大小",
           "refId": "A"
         },
         {
-          "expr": "jvm_memory_max_bytes{instance=\"$instance\", application=\"$application\", id=\"Eden Space\"}",
+          "expr": "jvm_memory_max_bytes{instance=\"$instance\", application=\"$application\", id=\"Eden Space\",job=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "最大内存",
@@ -968,14 +968,14 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "jvm_memory_used_bytes{instance=\"$instance\", application=\"$application\", id=\"Survivor Space\"}",
+          "expr": "jvm_memory_used_bytes{instance=\"$instance\", application=\"$application\", id=\"Survivor Space\",job=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "已使用内存大小",
           "refId": "C"
         },
         {
-          "expr": "jvm_memory_committed_bytes{instance=\"$instance\", application=\"$application\", id=\"Survivor Space\"}",
+          "expr": "jvm_memory_committed_bytes{instance=\"$instance\", application=\"$application\", id=\"Survivor Space\",job=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "当前可使用的内存大小",
@@ -1075,14 +1075,14 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "jvm_memory_used_bytes{instance=\"$instance\", application=\"$application\", id=\"Tenured Gen\"}",
+          "expr": "jvm_memory_used_bytes{instance=\"$instance\", application=\"$application\", id=\"Tenured Gen\",job=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "已使用内存大小",
           "refId": "C"
         },
         {
-          "expr": "jvm_memory_committed_bytes{instance=\"$instance\", application=\"$application\", id=\"Tenured Gen\"}",
+          "expr": "jvm_memory_committed_bytes{instance=\"$instance\", application=\"$application\", id=\"Tenured Gen\",job=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "当前可使用的内存大小",
@@ -1179,21 +1179,21 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "jvm_threads_daemon_threads{instance=\"$instance\", application=\"$application\"}",
+          "expr": "jvm_threads_daemon_threads{instance=\"$instance\", application=\"$application\",job=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "jvm守护线程",
           "refId": "A"
         },
         {
-          "expr": "jvm_threads_live_threads{instance=\"$instance\", application=\"$application\"}",
+          "expr": "jvm_threads_live_threads{instance=\"$instance\", application=\"$application\",job=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "活跃线程",
           "refId": "B"
         },
         {
-          "expr": "jvm_threads_peak_threads{instance=\"$instance\", application=\"$application\"}",
+          "expr": "jvm_threads_peak_threads{instance=\"$instance\", application=\"$application\",job=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "jvm线程峰值",
@@ -1285,21 +1285,21 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "jvm_memory_used_bytes{instance=\"$instance\", application=\"$application\", id=\"Code Cache\"}",
+          "expr": "jvm_memory_used_bytes{instance=\"$instance\", application=\"$application\", id=\"Code Cache\",job=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "已使用缓存大小",
           "refId": "C"
         },
         {
-          "expr": "jvm_memory_committed_bytes{instance=\"$instance\", application=\"$application\", id=\"Code Cache\"}",
+          "expr": "jvm_memory_committed_bytes{instance=\"$instance\", application=\"$application\", id=\"Code Cache\",job=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "当前可使用缓存大小",
           "refId": "A"
         },
         {
-          "expr": "jvm_memory_max_bytes{instance=\"$instance\", application=\"$application\", id=\"Code Cache\"}",
+          "expr": "jvm_memory_max_bytes{instance=\"$instance\", application=\"$application\", id=\"Code Cache\",job=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "最大缓存",
@@ -1391,21 +1391,21 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "jvm_memory_used_bytes{instance=\"$instance\", application=\"$application\", id=\"Metaspace\"}",
+          "expr": "jvm_memory_used_bytes{instance=\"$instance\", application=\"$application\", id=\"Metaspace\",job=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "已使用缓存大小",
           "refId": "C"
         },
         {
-          "expr": "jvm_memory_committed_bytes{instance=\"$instance\", application=\"$application\", id=\"Metaspace\"}",
+          "expr": "jvm_memory_committed_bytes{instance=\"$instance\", application=\"$application\", id=\"Metaspace\",job=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "当前可使用缓存大小",
           "refId": "A"
         },
         {
-          "expr": "jvm_memory_max_bytes{instance=\"$instance\", application=\"$application\", id=\"Metaspace\"}",
+          "expr": "jvm_memory_max_bytes{instance=\"$instance\", application=\"$application\", id=\"Metaspace\",job=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "最大缓存",
@@ -1494,14 +1494,14 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "jvm_buffer_memory_used_bytes{instance=\"$instance\", application=\"$application\", id=\"mapped\"}",
+          "expr": "jvm_buffer_memory_used_bytes{instance=\"$instance\", application=\"$application\", id=\"mapped\",job=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "已使用字节",
           "refId": "A"
         },
         {
-          "expr": "jvm_buffer_total_capacity_bytes{instance=\"$instance\", application=\"$application\", id=\"mapped\"}",
+          "expr": "jvm_buffer_total_capacity_bytes{instance=\"$instance\", application=\"$application\", id=\"mapped\",job=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "容量字节",
@@ -1590,14 +1590,14 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "jvm_buffer_memory_used_bytes{instance=\"$instance\", application=\"$application\", id=\"direct\"}",
+          "expr": "jvm_buffer_memory_used_bytes{instance=\"$instance\", application=\"$application\", id=\"direct\",job=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "已使用字节",
           "refId": "A"
         },
         {
-          "expr": "jvm_buffer_total_capacity_bytes{instance=\"$instance\", application=\"$application\", id=\"direct\"}",
+          "expr": "jvm_buffer_total_capacity_bytes{instance=\"$instance\", application=\"$application\", id=\"direct\",job=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "容量字节",
@@ -1686,14 +1686,14 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "irate(jvm_gc_memory_allocated_bytes_total{instance=\"$instance\", application=\"$application\"}[5m])",
+          "expr": "irate(jvm_gc_memory_allocated_bytes_total{instance=\"$instance\", application=\"$application\",job=\"$application\"}[5m])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "GC时，年轻代分配的内存空间",
           "refId": "A"
         },
         {
-          "expr": "irate(jvm_gc_memory_promoted_bytes_total{instance=\"$instance\", application=\"$application\"}[5m])",
+          "expr": "irate(jvm_gc_memory_promoted_bytes_total{instance=\"$instance\", application=\"$application\",job=\"$application\"}[5m])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "GC时，老年代分配的内存空间",
@@ -1798,7 +1798,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "irate(jvm_gc_pause_seconds_count{instance=\"$instance\", application=\"$application\"}[5m])",
+          "expr": "irate(jvm_gc_pause_seconds_count{instance=\"$instance\", application=\"$application\",job=\"$application\"}[5m])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{action}} [{{cause}}]",
@@ -1891,7 +1891,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "irate(jvm_gc_pause_seconds_sum{instance=\"$instance\", application=\"$application\"}[5m])",
+          "expr": "irate(jvm_gc_pause_seconds_sum{instance=\"$instance\", application=\"$application\",job=\"$application\"}[5m])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{action}} [{{cause}}]",
@@ -2010,7 +2010,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "hikaricp_connections{instance=\"$instance\", application=\"$application\", pool=\"$hikaricp\"}",
+          "expr": "hikaricp_connections{instance=\"$instance\", application=\"$application\", pool=\"$hikaricp\",job=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "",
@@ -2074,21 +2074,21 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "hikaricp_connections_active{instance=\"$instance\", application=\"$application\", pool=\"$hikaricp\"}",
+          "expr": "hikaricp_connections_active{instance=\"$instance\", application=\"$application\", pool=\"$hikaricp\",job=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "激活连接",
           "refId": "B"
         },
         {
-          "expr": "hikaricp_connections_idle{instance=\"$instance\", application=\"$application\", pool=\"$hikaricp\"}",
+          "expr": "hikaricp_connections_idle{instance=\"$instance\", application=\"$application\", pool=\"$hikaricp\",job=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "闲置连接",
           "refId": "A"
         },
         {
-          "expr": "hikaricp_connections_pending{instance=\"$instance\", application=\"$application\", pool=\"$hikaricp\"}",
+          "expr": "hikaricp_connections_pending{instance=\"$instance\", application=\"$application\", pool=\"$hikaricp\",job=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "挂起连接",
@@ -2194,7 +2194,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "hikaricp_connections_timeout_total{instance=\"$instance\", application=\"$application\", pool=\"$hikaricp\"}",
+          "expr": "hikaricp_connections_timeout_total{instance=\"$instance\", application=\"$application\", pool=\"$hikaricp\",job=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "",
@@ -2255,7 +2255,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "hikaricp_connections_creation_seconds_sum{instance=\"$instance\", application=\"$application\", pool=\"$hikaricp\"} / hikaricp_connections_creation_seconds_count{instance=\"$instance\", application=\"$application\", pool=\"$hikaricp\"}",
+          "expr": "hikaricp_connections_creation_seconds_sum{instance=\"$instance\", application=\"$application\", pool=\"$hikaricp\",job=\"$application\"} / hikaricp_connections_creation_seconds_count{instance=\"$instance\", application=\"$application\", pool=\"$hikaricp\",job=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "创建时间",
@@ -2344,7 +2344,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "hikaricp_connections_usage_seconds_sum{instance=\"$instance\", application=\"$application\", pool=\"$hikaricp\"} / hikaricp_connections_usage_seconds_count{instance=\"$instance\", application=\"$application\", pool=\"$hikaricp\"}",
+          "expr": "hikaricp_connections_usage_seconds_sum{instance=\"$instance\", application=\"$application\", pool=\"$hikaricp\",job=\"$application\"} / hikaricp_connections_usage_seconds_count{instance=\"$instance\", application=\"$application\", pool=\"$hikaricp\",job=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "使用时间",
@@ -2433,7 +2433,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "hikaricp_connections_acquire_seconds_sum{instance=\"$instance\", application=\"$application\", pool=\"$hikaricp\"} / hikaricp_connections_acquire_seconds_count{instance=\"$instance\", application=\"$application\", pool=\"$hikaricp\"}",
+          "expr": "hikaricp_connections_acquire_seconds_sum{instance=\"$instance\", application=\"$application\", pool=\"$hikaricp\",job=\"$application\"} / hikaricp_connections_acquire_seconds_count{instance=\"$instance\", application=\"$application\", pool=\"$hikaricp\",job=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "获取时间",
@@ -2537,7 +2537,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "http_server_requests_seconds_count{instance=\"$instance\", application=\"$application\", uri!~\".*actuator.*\"}",
+          "expr": "http_server_requests_seconds_count{instance=\"$instance\", application=\"$application\", uri!~\".*actuator.*\",job=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{method}} [{{status}}] - {{uri}}",
@@ -2629,7 +2629,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "irate(http_server_requests_seconds_sum{instance=\"$instance\", application=\"$application\", exception=\"None\", uri!~\".*actuator.*\"}[5m]) / irate(http_server_requests_seconds_count{instance=\"$instance\", application=\"$application\", exception=\"None\", uri!~\".*actuator.*\"}[5m])",
+          "expr": "irate(http_server_requests_seconds_sum{instance=\"$instance\", application=\"$application\", exception=\"None\", uri!~\".*actuator.*\",job=\"$application\"}[5m]) / irate(http_server_requests_seconds_count{instance=\"$instance\", application=\"$application\", exception=\"None\", uri!~\".*actuator.*\",job=\"$application\"}[5m])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{method}} [{{status}}] - {{uri}}",
@@ -2748,7 +2748,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "tomcat_global_error_total{instance=\"$instance\", application=\"$application\"}",
+          "expr": "tomcat_global_error_total{instance=\"$instance\", application=\"$application\",job=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "",
@@ -2811,7 +2811,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "tomcat_sessions_active_current_sessions{instance=\"$instance\", application=\"$application\"}",
+          "expr": "tomcat_sessions_active_current_sessions{instance=\"$instance\", application=\"$application\",job=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "tomcat活跃session数",
@@ -2903,14 +2903,14 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "irate(tomcat_global_sent_bytes_total{instance=\"$instance\", application=\"$application\"}[5m])",
+          "expr": "irate(tomcat_global_sent_bytes_total{instance=\"$instance\", application=\"$application\",job=\"$application\"}[5m])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "已发送字节",
           "refId": "A"
         },
         {
-          "expr": "irate(tomcat_global_received_bytes_total{instance=\"$instance\", application=\"$application\"}[5m])",
+          "expr": "irate(tomcat_global_received_bytes_total{instance=\"$instance\", application=\"$application\",job=\"$application\"}[5m])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "已接受字节",
@@ -3016,7 +3016,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "tomcat_threads_config_max_threads{instance=\"$instance\", application=\"$application\"}",
+          "expr": "tomcat_threads_config_max_threads{instance=\"$instance\", application=\"$application\",job=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "",
@@ -3078,14 +3078,14 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "tomcat_threads_current_threads{instance=\"$instance\", application=\"$application\"}",
+          "expr": "tomcat_threads_current_threads{instance=\"$instance\", application=\"$application\",job=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "当前线程数",
           "refId": "A"
         },
         {
-          "expr": "tomcat_threads_busy_threads{instance=\"$instance\", application=\"$application\"}",
+          "expr": "tomcat_threads_busy_threads{instance=\"$instance\", application=\"$application\",job=\"$application\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "tomcat繁忙线程",
@@ -3189,7 +3189,7 @@
       "targets": [
         {
           "alias": "",
-          "expr": "irate(logback_events_total{instance=\"$instance\", application=\"$application\", level=\"info\"}[5m])",
+          "expr": "irate(logback_events_total{instance=\"$instance\", application=\"$application\", level=\"info\",job=\"$application\"}[5m])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "info",
@@ -3281,7 +3281,7 @@
       "targets": [
         {
           "alias": "",
-          "expr": "irate(logback_events_total{instance=\"$instance\", application=\"$application\", level=\"error\"}[5m])",
+          "expr": "irate(logback_events_total{instance=\"$instance\", application=\"$application\", level=\"error\",job=\"$application\"}[5m])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "error",
@@ -3373,7 +3373,7 @@
       "targets": [
         {
           "alias": "",
-          "expr": "irate(logback_events_total{instance=\"$instance\", application=\"$application\", level=\"warn\"}[5m])",
+          "expr": "irate(logback_events_total{instance=\"$instance\", application=\"$application\", level=\"warn\",job=\"$application\"}[5m])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "warn",
@@ -3465,7 +3465,7 @@
       "targets": [
         {
           "alias": "",
-          "expr": "irate(logback_events_total{instance=\"$instance\", application=\"$application\", level=\"debug\"}[5m])",
+          "expr": "irate(logback_events_total{instance=\"$instance\", application=\"$application\", level=\"debug\",job=\"$application\"}[5m])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "debug",
@@ -3557,7 +3557,7 @@
       "targets": [
         {
           "alias": "",
-          "expr": "irate(logback_events_total{instance=\"$instance\", application=\"$application\", level=\"trace\"}[5m])",
+          "expr": "irate(logback_events_total{instance=\"$instance\", application=\"$application\", level=\"trace\",job=\"$application\"}[5m])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "trace",
@@ -3616,63 +3616,6 @@
       {
         "allValue": null,
         "current": {
-          "text": "localhost:8888",
-          "value": "localhost:8888"
-        },
-        "hide": 0,
-        "includeAll": false,
-        "label": "服务地址",
-        "multi": false,
-        "name": "instance",
-        "options": [
-          {
-            "selected": false,
-            "text": "115.233.200.155:9010",
-            "value": "115.233.200.155:9010"
-          },
-          {
-            "selected": false,
-            "text": "115.233.200.155:7101",
-            "value": "115.233.200.155:7101"
-          },
-          {
-            "selected": false,
-            "text": "115.233.200.155:7201",
-            "value": "115.233.200.155:7201"
-          },
-          {
-            "selected": false,
-            "text": "115.233.200.155:7401",
-            "value": "115.233.200.155:7401"
-          },
-          {
-            "selected": false,
-            "text": "115.233.200.155:7601",
-            "value": "115.233.200.155:7601"
-          },
-          {
-            "selected": false,
-            "text": "115.233.200.155:9101",
-            "value": "115.233.200.155:9101"
-          },
-          {
-            "selected": false,
-            "text": "115.233.200.155:9201",
-            "value": "115.233.200.155:9201"
-          },
-          {
-            "selected": false,
-            "text": "115.233.200.155:9301",
-            "value": "115.233.200.155:9301"
-          }
-        ],
-        "query": "115.233.200.155:9010,115.233.200.155:7101,115.233.200.155:7201,115.233.200.155:7401,115.233.200.155:7601,115.233.200.155:9101,115.233.200.155:9201,115.233.200.155:9301",
-        "skipUrlSync": false,
-        "type": "custom"
-      },
-      {
-        "allValue": null,
-        "current": {
           "text": "iptv-prometheus",
           "value": "iptv-prometheus"
         },
@@ -3682,6 +3625,11 @@
         "multi": false,
         "name": "application",
         "options": [
+          {
+            "selected": true,
+            "text": "iptv-prometheus",
+            "value": "iptv-prometheus"
+          },
           {
             "selected": false,
             "text": "gateway-zuul",
@@ -3723,15 +3671,39 @@
             "value": "consumer-outside-v1"
           }
         ],
-        "query": "gateway-zuul,provider-user,provider-points,provider-products,kafka-consumer-points,consumer-epg-v1,consumer-sys-v1,consumer-outside-v1",
+        "query": "iptv-prometheus,gateway-zuul,provider-user,provider-points,provider-products,kafka-consumer-points,consumer-epg-v1,consumer-sys-v1,consumer-outside-v1",
         "skipUrlSync": false,
         "type": "custom"
       },
       {
         "allValue": null,
         "current": {
+          "text": "192.168.1.68:8888",
+          "value": "192.168.1.68:8888"
+        },
+        "datasource": "zch电脑的Prometheus",
+        "definition": "label_values(up{job=\"$application\"}, instance)",
+        "hide": 0,
+        "includeAll": false,
+        "label": "服务地址",
+        "multi": false,
+        "name": "instance",
+        "options": [],
+        "query": "label_values(up{job=\"$application\"}, instance)",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
           "isNone": true,
-          "selected": true,
           "text": "None",
           "value": ""
         },
@@ -3753,6 +3725,82 @@
         "tagsQuery": "",
         "type": "query",
         "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "text": "gateway-zuul",
+          "value": "gateway-zuul"
+        },
+        "datasource": "zch电脑的Prometheus",
+        "definition": "label_values(up, job)",
+        "hide": 1,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "job",
+        "options": [
+          {
+            "selected": false,
+            "text": "systemstatus",
+            "value": "systemstatus"
+          },
+          {
+            "selected": false,
+            "text": "provider-user",
+            "value": "provider-user"
+          },
+          {
+            "selected": false,
+            "text": "provider-points",
+            "value": "provider-points"
+          },
+          {
+            "selected": false,
+            "text": "provider-products",
+            "value": "provider-products"
+          },
+          {
+            "selected": false,
+            "text": "kafka-consumer-points",
+            "value": "kafka-consumer-points"
+          },
+          {
+            "selected": false,
+            "text": "prometheus",
+            "value": "prometheus"
+          },
+          {
+            "selected": true,
+            "text": "gateway-zuul",
+            "value": "gateway-zuul"
+          },
+          {
+            "selected": false,
+            "text": "consumer-epg-v1",
+            "value": "consumer-epg-v1"
+          },
+          {
+            "selected": false,
+            "text": "consumer-sys-v1",
+            "value": "consumer-sys-v1"
+          },
+          {
+            "selected": false,
+            "text": "consumer-outside-v1",
+            "value": "consumer-outside-v1"
+          }
+        ],
+        "query": "label_values(up, job)",
+        "refresh": 0,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
       }
     ]
   },
@@ -3767,5 +3815,5 @@
   "timezone": "",
   "title": "iptv监控运营平台",
   "uid": "qaZcxwTZk",
-  "version": 4
+  "version": 18
 }

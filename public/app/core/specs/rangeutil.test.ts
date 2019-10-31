@@ -5,7 +5,7 @@ import { dateTime } from '@grafana/data';
 describe('rangeUtil', () => {
   describe('Can get range grouped list of ranges', () => {
     it('when custom settings should return default range list', () => {
-      const groups: any = rangeUtil.getRelativeTimesList({ time_options: [] }, '最近5分钟');
+      const groups: any = rangeUtil.getRelativeTimesList({ time_options: [] }, 'Last 5 minutes');
       expect(_.keys(groups).length).toBe(4);
       expect(groups[3][0].active).toBe(true);
     });
